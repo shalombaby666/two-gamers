@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111414" />
+    <meta name="description" content="Tiny games. Big rivalries. Play quick two-player arcade games with a friend." />
+    <title>Two Gamers — One more round</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Two Gamers home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span>TWO<span class="brand-light">GAMERS</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="active" href="#games">PLAY</a><a href="#how">HOW IT WORKS</a>
+        </nav>
+        <button class="profile-pill" id="profile-button" aria-label="Guest profile">
+          <span class="profile-dot"></span><span>GUEST</span><span class="profile-points" id="points">0 PTS</span>
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="live-dot"></span> THE ARCADE IS OPEN <span class="eyebrow-line"></span> VOL. 01</div>
+            <h1 id="hero-title">ONE MORE<br /><span>ROUND<span class="period">.</span></span></h1>
+            <p class="hero-intro">Tiny games. Big rivalries.<br />Pick a game and settle it in 3 minutes.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#games">PICK YOUR GAME <span aria-hidden="true">↘</span></a><span class="no-signup"><span aria-hidden="true">✳</span> NO SIGN-UP NEEDED</span></div>
+          </div>
+          <div class="hero-art" aria-label="Two arcade players facing off">
+            <div class="art-grid"></div><div class="art-sun"></div><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div>
+            <div class="art-stage"><span class="stage-label">ROUND 01<br />NIGHT MARKET</span><span class="stage-number">VS</span><span class="stage-caption">CHALLENGE<br />A FRIEND</span></div>
+            <div class="fighter fighter-a"><span class="fighter-head"></span><span class="fighter-body"></span><span class="fighter-leg left"></span><span class="fighter-leg right"></span></div>
+            <div class="fighter fighter-b"><span class="fighter-head"></span><span class="fighter-body"></span><span class="fighter-leg left"></span><span class="fighter-leg right"></span></div>
+            <span class="art-label label-a">P1 / READY</span><span class="art-label label-b">P2 / READY</span>
+            <span class="pixel-spark spark-one">✳</span><span class="pixel-spark spark-two">✦</span>
+            <div class="art-index">TG<span>—</span>001</div>
+          </div>
+          <div class="hero-meta"><span>EST. PLAYTIME</span><strong>01—03 MIN</strong><span class="meta-divider"></span><span>PLAYERS</span><strong>02</strong><span class="meta-divider"></span><span>GOOD VIBES</span><strong>100%</strong></div>
+        </section>
+
+        <section class="games-section" id="games">
+          <div class="section-heading"><div><div class="eyebrow section-eyebrow">THE CABINET <span class="heading-line"></span> 03 GAMES</div><h2>Choose your <span>chaos.</span></h2></div><a class="text-link" href="#how">HOW TO PLAY <span>↗</span></a></div>
+          <div class="game-grid" id="game-grid"></div>
+        </section>
+
+        <section class="play-note" id="how"><div class="note-icon">↗</div><div><span class="eyebrow">PULL UP A FRIEND</span><h3>One screen. Two players. No ceremony.</h3></div><p>Use one keyboard or share a touchscreen. Pick a game, learn the controls in seconds, then play best of three.</p><span class="note-stamp">MADE FOR<br />THE REMATCH</span></section>
+      </main>
+
+      <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>TWO<span class="brand-light">GAMERS</span></span></a><span>GOOD GAME. RUN IT BACK.</span><span class="footer-version">WEB ARCADE / 001</span></footer>
+    </div>
+
+    <dialog class="game-dialog" id="game-dialog" aria-labelledby="game-title">
+      <div class="game-frame">
+        <div class="game-topline"><span class="game-brand"><span class="mini-mark">TG</span> TWO GAMERS / ARCADE</span><button class="icon-button" id="close-game" aria-label="Close game">✕</button></div>
+        <div class="game-heading"><div><div class="eyebrow" id="game-kicker">LOCAL MATCH / 2 PLAYERS</div><h2 id="game-title"></h2></div><div class="round-clock" id="round-clock">01:00</div></div>
+        <div class="game-stage-wrap"><canvas id="game-canvas" width="960" height="520" aria-label="Mini-game canvas"></canvas><div class="start-overlay" id="start-overlay"><div class="start-chip">READY?</div><p id="game-instructions"></p><button class="button button-primary" id="start-game">START MATCH <span>→</span></button></div><div class="result-overlay hidden" id="result-overlay"><div class="start-chip">MATCH COMPLETE</div><h3 id="result-title"></h3><p id="result-copy"></p><div class="result-actions"><button class="button button-primary" id="replay-game">RUN IT BACK ↻</button><button class="button button-quiet" id="home-game">BACK TO CABINET</button></div></div></div>
+        <div class="game-bottom"><div class="game-controls" id="game-controls"></div><div class="game-status"><span class="live-dot"></span><span id="game-status-text">LOCAL PLAY / SAME DEVICE</span></div></div>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
