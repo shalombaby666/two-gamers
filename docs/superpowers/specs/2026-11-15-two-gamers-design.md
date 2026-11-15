@@ -27,7 +27,7 @@ The product promise is “choose a game, understand it in seconds, finish a matc
 
 ## Gameplay
 
-All first-release games are short, keyboard-friendly, and fit a single canvas. Roof Rush uses WASD versus arrow keys and ends on a timer or when a player loses all hearts. Bento Blitz has both players move on opposite sides of a shared counter to assemble the displayed order before the timer expires. Street Rally uses one accelerate/steer input per player, a compact looping track, and a finish after three laps. Each round shows controls before play and offers replay without returning to the home screen.
+All first-release games are short, keyboard-friendly, and fit a single canvas. Roof Rush uses WASD versus arrow keys; players stop at the roof edge, and a dash collision can knock a rival off. Bento Blitz gives each cook a side of the counter and requires one correct ingredient from each side for every order. Street Rally uses throttle and lane steering on a looping track, with hazards and car-to-car bumps that change speed and position. Each round shows controls before play and offers replay without returning to the home screen.
 
 ## Architecture
 

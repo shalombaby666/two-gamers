@@ -20,9 +20,9 @@ npm run preview
 
 ## Games
 
-- **Roof Rush** — versus rooftop arena. Move with WASD and arrow keys. Bump your rival off the roof.
-- **Bento Blitz** — cooperative kitchen rush. Move with WASD and arrows; P1 uses E and P2 uses Enter to pick up ingredients and serve orders.
-- **Street Rally** — three-lap arcade race. P1 accelerates with W and changes lanes with A/D; P2 uses ↑ and ←/→.
+- **Roof Rush** — versus rooftop arena. Move with WASD or arrow keys, then dash with E or Enter to knock a rival off near the edge. Walking into the edge stops you.
+- **Bento Blitz** — two-cook kitchen rush. P1 handles the left counter with WASD + E; P2 handles the right with arrows + Enter. Each cook must deliver one matching ingredient per order.
+- **Street Rally** — three-lap arcade race. Hold W or ↑ to accelerate, steer with A/D or ←/→, dodge roadblocks, and bump a rival who shares your lane.
 
 Touch controls are included for phones and tablets. Match points are saved in the current browser without an account.
 

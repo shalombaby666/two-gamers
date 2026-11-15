@@ -30,7 +30,7 @@ function renderControls(entry) {
 
 function renderTouchControls(entry) {
   const maps = entry.id === 'roof-rush'
-    ? [['KeyW','KeyA','KeyS','KeyD'], ['ArrowUp','ArrowLeft','ArrowDown','ArrowRight']]
+    ? [['KeyW','KeyA','KeyS','KeyD','KeyE'], ['ArrowUp','ArrowLeft','ArrowDown','ArrowRight','Enter']]
     : entry.id === 'bento-blitz'
       ? [['KeyW','KeyA','KeyS','KeyD','KeyE'], ['ArrowUp','ArrowLeft','ArrowDown','ArrowRight','Enter']]
       : [['KeyW','KeyA','KeyD'], ['ArrowUp','ArrowLeft','ArrowRight']];
