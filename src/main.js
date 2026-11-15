@@ -10,6 +10,7 @@ const ctx = canvas.getContext('2d');
 const startOverlay = $('#start-overlay');
 const resultOverlay = $('#result-overlay');
 const keyState = new Set();
+const touchKeys = new Set();
 let activeGame = null;
 let activeEntry = null;
 let scoreTimer = null;
@@ -63,12 +64,17 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) clear
 document.addEventListener('pointerdown', (event) => {
   const button = event.target.closest('[data-key]');
   if (!button) return;
-  event.preventDefault(); keyState.add(button.dataset.key); button.classList.add('pressed');
+  event.preventDefault(); touchKeys.add(button.dataset.key); keyState.add(button.dataset.key); button.classList.add('pressed');
 });
-for (const type of ['pointerup', 'pointercancel', 'pointerleave']) document.addEventListener(type, (event) => {
+document.addEventListener('pointerleave', (event) => {
   const button = event.target.closest?.('[data-key]');
   if (button) { keyState.delete(button.dataset.key); button.classList.remove('pressed'); }
-  if (type !== 'pointerleave') clearKeys();
+  if (button) touchKeys.delete(button.dataset.key);
+});
+for (const type of ['pointerup', 'pointercancel']) window.addEventListener(type, () => {
+  for (const key of touchKeys) keyState.delete(key);
+  touchKeys.clear();
+  document.querySelectorAll('.touch-key.pressed').forEach((button) => button.classList.remove('pressed'));
 });
 
 grid.addEventListener('click', (event) => {
