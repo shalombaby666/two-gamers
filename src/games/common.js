@@ -1,6 +1,8 @@
 export const WIDTH = 960;
 export const HEIGHT = 520;
 
+let paused=false;
+export function setPaused(value){paused=Boolean(value);}
 export function startLoop(step) {
   let frame = 0;
   let previous = performance.now();
@@ -9,7 +11,7 @@ export function startLoop(step) {
     if (!running) return;
     const dt = Math.min((now - previous) / 1000, 0.04);
     previous = now;
-    step(dt, now / 1000);
+    if(!paused)step(dt, now / 1000);
     frame = requestAnimationFrame(tick);
   };
   frame = requestAnimationFrame(tick);

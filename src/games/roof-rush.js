@@ -128,5 +128,5 @@ export function createRoofRush({ ctx, isDown, onFinish }) {
     paint();
   }
 
-  return { start() { paint(); stopLoop = startLoop(update); }, destroy() { finished = true; stopLoop(); } };
+  return { getState(){return {seconds,players:players.map(p=>({...p})),finished};}, start() { paint(); stopLoop = startLoop(update); }, destroy() { finished = true; stopLoop(); } };
 }

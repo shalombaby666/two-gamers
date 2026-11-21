@@ -37,3 +37,6 @@ The `main` branch has a GitHub Actions workflow that builds and publishes the st
 ## Project notes
 
 See [the design](docs/superpowers/specs/2026-11-15-two-gamers-design.md) and [implementation plan](docs/superpowers/plans/2026-11-15-two-gamers.md). All artwork is drawn in CSS or Canvas for this prototype.
+
+## Обновление 21 ноября 2026
+Добавлены пауза по P и кнопке, автопауза при потере фокуса, независимое управление несколькими касаниями и обновление таймера. Повреждённая статистика не ломает запуск. Проверены движение, выбивание на крыше, победа в гонке, приготовление заказа и завершение раундов.

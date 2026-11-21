@@ -2,7 +2,7 @@ const KEY = 'two-gamers-stats-v1';
 
 export function readStats() {
   try {
-    return JSON.parse(localStorage.getItem(KEY)) || { points: 0, matches: 0, wins: 0 };
+    const data=JSON.parse(localStorage.getItem(KEY));return Object.fromEntries(['points','matches','wins'].map(k=>[k,Number.isSafeInteger(data?.[k])&&data[k]>=0?data[k]:0]));
   } catch {
     return { points: 0, matches: 0, wins: 0 };
   }
@@ -13,6 +13,6 @@ export function saveMatch(winner) {
   stats.matches += 1;
   stats.points += winner ? 25 : 10;
   if (winner === 1) stats.wins += 1;
-  localStorage.setItem(KEY, JSON.stringify(stats));
+  try{localStorage.setItem(KEY, JSON.stringify(stats));}catch{}
   return stats;
 }

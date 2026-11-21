@@ -134,3 +134,5 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--cyan); outline-
   .hero-meta strong { margin-right: 0; font-size: 6px; }
   .meta-divider { margin: 0 1px; }
 }
+
+#pause-overlay{z-index:8;background:rgba(10,23,22,.94)}.touch-key{touch-action:none;user-select:none}#pause-game{min-height:44px;margin-left:12px}.game-heading{flex-wrap:wrap;gap:10px}

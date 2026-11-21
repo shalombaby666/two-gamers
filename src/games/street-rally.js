@@ -139,5 +139,5 @@ export function createStreetRally({ ctx, isDown, onFinish }) {
     paint();
   }
 
-  return { start() { paint(); stopLoop = startLoop(update); }, destroy() { finished = true; stopLoop(); } };
+  return { getState(){return {seconds,players:players.map(p=>({...p,hitHazards:[...p.hitHazards]})),finished};}, start() { paint(); stopLoop = startLoop(update); }, destroy() { finished = true; stopLoop(); } };
 }
